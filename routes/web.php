@@ -17,3 +17,9 @@ Route::get('/', function () {
 
 Route::resource('profile', 'ProfileController');
 Route::post('/search', 'ProfileController@search');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', 'AdminController@index');
+

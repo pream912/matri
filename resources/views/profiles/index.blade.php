@@ -1,4 +1,4 @@
-@extends('layouts.mainlayout')
+@extends('layouts.app')
 @section('content')
     <div class="container">
         {!! Form::open(['action' => 'ProfileController@store', 'method' => 'POST','enctype' => 'multipart/form-data']) !!}
@@ -14,6 +14,28 @@
                 {{Form::radio('sex', 'female')}} 
                 {{Form::label('sex', 'பெண்')}}
             </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-2">{{Form::label('caste', 'சாதி')}}</div>
+                <div class="col-10 ">{{Form::select('caste', ['முத்தரையர்' => 'முத்தரையர்',
+                                                                'முக்குலத்தோர்' => 'முக்குலத்தோர்',
+                                                                'மறவர்' => 'மறவர்',
+                                                                'தேவர்' => 'தேவர்',
+                                                                'அகமுடையார்' => 'அகமுடையார்',
+                                                                'கவுண்டர்' => 'கவுண்டர்',
+                                                                'ரெடியார்' => 'ரெடியார்',
+                                                                'நாடார்' => 'நாடார்',
+                                                                'நாயுடு' => 'நாயுடு',
+                                                                'விஸ்வகரமா' => 'விஸ்வகரமா',
+                                                                'யாதவர்' => 'யாதவர்',
+                                                                'வாணன்' => 'வாணன்',
+                                                                'மருத்துவர்' => 'மருத்துவர்',
+                                                                'கள்ளர்' => 'கள்ளர்',
+                                                                'வெள்ளாலர்' => 'வெள்ளாலர்',
+                                                                'செட்டியார்' => 'செட்டியார்',
+                                                                'சௌராஸ்டியர்' => 'சௌராஸ்டியர்',
+                                                                'கன்னடர்' => 'கன்னடர்',
+                                                                'தெலுங்கர்' => 'தெலுங்கர்',])}}</div>
             </div>
             <div class="form-group row">
                 <div class="col-2">{{Form::label('dob', 'பிறந்த தேதி')}}</div>
@@ -36,13 +58,9 @@
                 <div class="col-10 input-group-sm">{{Form::text('height', '', ['class' => 'form-control', 'placeholder' => ''])}}</div>
             </div>
             <div class="form-group row">
-                <div class="col-2">{{Form::label('color', 'நிறம்')}}</div>
-                <div class="col-10 input-group-sm">{{Form::text('color', '', ['class' => 'form-control', 'placeholder' => ''])}}</div>
-            </div>
-            <div class="form-group row">
                 <div class="col-2">{{Form::label('loc1', 'வசிக்கும் இடம்')}}</div>
-                <div class="col-6 input-group-sm">{{Form::text('loc1', '', ['class' => 'form-control', 'placeholder' => ''])}}</div>
-                <div class="col-4">
+                <div class="col-5 input-group-sm">{{Form::text('loc1', '', ['class' => 'form-control', 'placeholder' => ''])}}</div>
+                <div class="col-5">
                     {{Form::radio('loc_i', 'tn')}} 
                     {{Form::label('loc_i', 'தமிழகம்')}} &nbsp; &nbsp;
                     {{Form::radio('loc_i', 'os')}} 
@@ -131,21 +149,21 @@
         <hr>
         <h2 style="text-align: center;">ஜாதகம்</h2>
         </br>
-            <div class="form-group row">
-                <div class="col-2">{{Form::label('rasi', 'இராசி')}}</div>
-                <div class="col-10 ">{{Form::select('rasi', ['மேஷம்' => 'மேஷம்',
-                                                                'ரிஷபம்' => 'ரிஷபம்',
-                                                                'மிதுனம்' => 'மிதுனம்',
-                                                                'கடகம்' => 'கடகம்',
-                                                                'சிம்மம்' => 'சிம்மம்',
-                                                                'கன்னி' => 'கன்னி',
-                                                                'துலாம்' => 'துலாம்',
-                                                                'விருச்சகம்' => 'விருச்சகம்',
-                                                                'தனுசு' => 'தனுசு',
-                                                                'மகரம்' => 'மகரம்',
-                                                                'கும்பம்' => 'கும்பம்',
-                                                                'மீனம்' => 'மீனம்',])}}</div>
-            </div>
+        <div class="form-group row">
+            <div class="col-2">{{Form::label('rasi', 'இராசி')}}</div>
+            <div class="col-10 ">{{Form::select('rasi', ['மேஷம்' => 'மேஷம்',
+                                                            'ரிஷபம்' => 'ரிஷபம்',
+                                                            'மிதுனம்' => 'மிதுனம்',
+                                                            'கடகம்' => 'கடகம்',
+                                                            'சிம்மம்' => 'சிம்மம்',
+                                                            'கன்னி' => 'கன்னி',
+                                                            'துலாம்' => 'துலாம்',
+                                                            'விருச்சகம்' => 'விருச்சகம்',
+                                                            'தனுசு' => 'தனுசு',
+                                                            'மகரம்' => 'மகரம்',
+                                                            'கும்பம்' => 'கும்பம்',
+                                                            'மீனம்' => 'மீனம்',])}}</div>
+        </div>
             <div class="form-group row">
                 <div class="col-2">{{Form::label('natcha', 'நட்சத்திரம்')}}</div>
                 <div class="col-10 ">{{Form::select('natcha', ['அஸ்வினி' => 'அஸ்வினி',
@@ -190,11 +208,7 @@
                                                                             'தனுசு' => 'தனுசு',
                                                                             'மகரம்' => 'மகரம்',
                                                                             'கும்பம்' => 'கும்பம்',
-                                                                            'மீனம்' => 'மீனம்',], 'மேஷம்')}}</div>
-            </div>
-            <div class="form-group row">
-                <div class="col-2">{{Form::label('direc', 'திசை இருப்பு')}}</div>
-                <div class="col-10 input-group-sm">{{Form::text('direc', '', ['class' => 'form-control', 'placeholder' => ''])}}</div>
+                                                                            'மீனம்' => 'மீனம்',])}}</div>
             </div>
         </br>
         <hr>

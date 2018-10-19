@@ -12,6 +12,11 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('profiles.search');
@@ -50,6 +55,7 @@ class ProfileController extends Controller
 
         $profiles = new Profile;
         $profiles->user_id = 0;
+        $profiles->active = 0;
         $profiles->name = $request->name;
         $profiles->sex = $request->sex;
         $profiles->dob = $request->dob;
@@ -57,7 +63,6 @@ class ProfileController extends Controller
         $profiles->job = $request->job;
         $profiles->sal = $request->sal;
         $profiles->height = $request->height;
-        $profiles->color = $request->color;
         $profiles->loc1 = $request->loc1;
         $profiles->loc2 = $request->loc2;
         $profiles->loc_i = $request->loc_i;
@@ -79,7 +84,6 @@ class ProfileController extends Controller
         $profiles->rasi = $request->rasi;
         $profiles->natcha = $request->natcha;
         $profiles->laknam = $request->laknam;
-        $profiles->direc = $request->direc;
         $profiles->e_edu = $request->e_edu;
         $profiles->e_job = $request->e_job;
         $profiles->photo = $fileNameToStore1;

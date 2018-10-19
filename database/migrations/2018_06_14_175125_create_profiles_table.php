@@ -16,16 +16,17 @@ class CreateProfilesTable extends Migration
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
+            $table->integer('active');
 
             /* bio */
             $table->string('name');
             $table->string('sex');
+            $table->string('caste');
             $table->string('dob');
             $table->string('edu');
             $table->string('job');
             $table->integer('sal');
             $table->string('height');
-            $table->string('color');
             $table->string('loc1');
             $table->string('loc2');
             $table->string('loc_i');
@@ -50,17 +51,16 @@ class CreateProfilesTable extends Migration
             $table->string('email');
 
             /* horoscope */
-            $table->integer('rasi');
-            $table->integer('natcha');
-            $table->integer('laknam');
-            $table->string('direc');
+            $table->string('rasi');
+            $table->string('natcha');
+            $table->string('laknam');
 
             /* exceptation */
             $table->string('e_edu');
             $table->string('e_job');
 
             /* attachments */
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->string('horoscope');
 
 
