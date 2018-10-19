@@ -102,10 +102,12 @@ class ProfileController extends Controller
     public function search(Request $request) 
     {
         $sex = $request->sex;
+        $caste = $request->caste;
         $rasi = $request->rasi;
         $natcha = $request->natcha;
 
         $profiles = Profile::where('sex', $sex)
+                               ->where('caste', $caste)
                                ->where('rasi', $rasi)
                                ->where('natcha', $natcha)
                                ->get();
