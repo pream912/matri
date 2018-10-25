@@ -21,15 +21,17 @@ class CreateProfilesTable extends Migration
             /* bio */
             $table->string('name');
             $table->string('sex');
+            $table->string('m_status');
             $table->string('caste');
             $table->string('dob');
             $table->string('edu');
             $table->string('job');
-            $table->integer('sal');
+            $table->string('sal');
             $table->string('height');
             $table->string('loc1');
             $table->string('loc2');
             $table->string('loc_i');
+            $table->string('kula_god');
 
             /* family */
             $table->string('fname');

@@ -57,6 +57,7 @@ class ProfileController extends Controller
         $profiles->user_id = 0;
         $profiles->active = 0;
         $profiles->name = $request->name;
+        $profiles->caste = $request->caste;
         $profiles->sex = $request->sex;
         $profiles->dob = $request->dob;
         $profiles->edu = $request->edu;

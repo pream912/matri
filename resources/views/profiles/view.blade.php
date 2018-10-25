@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div style="box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.25);" class="container">
+    <div class="container">
         {!! Form::open(['action' => 'ProfileController@store', 'method' => 'POST','enctype' => 'multipart/form-data']) !!}
         <hr>
         <h2 style="text-align: center;">சுயவிவரம்</h2>
@@ -10,21 +10,14 @@
                 <div class="col-12 col-md-7 input-group-sm"> {{Form::text('name', '', ['class' => 'form-control', 'placeholder' => ''])}} </div>
                 <div class="col-12 col-md-3 "> 
                 {{Form::radio('sex', 'male')}} 
-                {{Form::label('sex', 'ஆண்')}} &nbsp; &nbsp;
+                {{Form::label('sex', 'ஆன்')}} &nbsp; &nbsp;
                 {{Form::radio('sex', 'female')}} 
                 {{Form::label('sex', 'பெண்')}}
             </div>
             </div>
             <div class="form-group row">
-                <div class="col-12 col-md-2">{{Form::label('m_status', 'திருமண தன்மை')}}</div>
-                <div class="col-12 col-md-10 ">{{Form::select('m_status', ['unmarried' => 'திருமணம் ஆக்கவில்லை',
-                                                                            'married' => 'திருமணம் ஆகிவிட்டது',
-                                                                            ])}}</div>
-            </div>
-            <div class="form-group row">
-                <div class="col-12 col-m
-                d-2">{{Form::label('caste', 'சாதி')}}</div>
-                <div class="col-12 col-md-10">{{Form::select('caste', ['முத்தரையர்' => 'முத்தரையர்',
+                <div class="col-12 col-md-2">{{Form::label('caste', 'சாதி')}}</div>
+                <div class="col-12 col-md-10 ">{{Form::select('caste', ['முத்தரையர்' => 'முத்தரையர்',
                                                                 'முக்குலத்தோர்' => 'முக்குலத்தோர்',
                                                                 'மறவர்' => 'மறவர்',
                                                                 'தேவர்' => 'தேவர்',
@@ -79,10 +72,6 @@
             <div class="form-group row">
                 <div class="col-12 col-md-2">{{Form::label('loc2', 'பூர்வீகம்')}}</div>
                 <div class="col-12 col-md-10 input-group-sm">{{Form::text('loc2', '', ['class' => 'form-control', 'placeholder' => ''])}}</div>
-            </div>
-            <div class="form-group row">
-                <div class="col-12 col-md-2">{{Form::label('kula_god', 'குலதெய்வம்')}}</div>
-                <div class="col-12 col-md-10 input-group-sm">{{Form::text('kula_god', '', ['class' => 'form-control', 'placeholder' => ''])}}</div>
             </div>
         </br>
         <hr>
