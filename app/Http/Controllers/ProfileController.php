@@ -57,6 +57,7 @@ class ProfileController extends Controller
         $profiles->user_id = 0;
         $profiles->active = 0;
         $profiles->name = $request->name;
+        $profiles->m_status = $request->m_status;
         $profiles->caste = $request->caste;
         $profiles->sex = $request->sex;
         $profiles->dob = $request->dob;
@@ -64,9 +65,11 @@ class ProfileController extends Controller
         $profiles->job = $request->job;
         $profiles->sal = $request->sal;
         $profiles->height = $request->height;
+        $profiles->color = $request->color;
         $profiles->loc1 = $request->loc1;
         $profiles->loc2 = $request->loc2;
         $profiles->loc_i = $request->loc_i;
+        $profiles->kula_god = $request->kula_god;
         $profiles->fname = $request->fname;
         $profiles->falive = $request->falive;
         $profiles->fjob = $request->fjob;
@@ -118,7 +121,8 @@ class ProfileController extends Controller
 
     public function show($id)
     {
-        //
+        $profile = Profile::find($id);
+        return view('profiles.view')->with('profile', $profile);
     }
 
     /**
@@ -129,7 +133,8 @@ class ProfileController extends Controller
      */
     public function edit($id)
     {
-        //
+        
+        
     }
 
     /**

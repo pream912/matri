@@ -103,6 +103,7 @@
             </tr>
             <tr>
                 <td>வசிக்கும் இடம்: {{ $profile->loc1 }}</td>
+            <td><a class="btn btn-primary" href="/profile/{{ $profile->id }}">View</a></td>
             </tr>
         </table>
     </div>

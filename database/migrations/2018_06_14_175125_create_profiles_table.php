@@ -28,6 +28,7 @@ class CreateProfilesTable extends Migration
             $table->string('job');
             $table->string('sal');
             $table->string('height');
+            $table->string('color');
             $table->string('loc1');
             $table->string('loc2');
             $table->string('loc_i');

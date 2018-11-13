@@ -22,8 +22,7 @@
                                                                             ])}}</div>
             </div>
             <div class="form-group row">
-                <div class="col-12 col-m
-                d-2">{{Form::label('caste', 'சாதி')}}</div>
+                <div class="col-12 col-md-2">{{Form::label('caste', 'சாதி')}}</div>
                 <div class="col-12 col-md-10">{{Form::select('caste', ['முத்தரையர்' => 'முத்தரையர்',
                                                                 'முக்குலத்தோர்' => 'முக்குலத்தோர்',
                                                                 'மறவர்' => 'மறவர்',
@@ -63,6 +62,13 @@
             <div class="form-group row">
                 <div class="col-12 col-md-2">{{Form::label('height', 'உயரம்')}}</div>
                 <div class="col-12 col-md-10 input-group-sm">{{Form::text('height', '', ['class' => 'form-control', 'placeholder' => ''])}}</div>
+            </div>
+            <div class="form-group row">
+                <div class="col-12 col-md-2">{{Form::label('color', 'நிறம்')}}</div>
+                <div class="col-12 col-md-10 ">{{Form::select('color', ['சிகப்பு' => 'சிகப்பு',
+                                                                        'கருப்பு' => 'கருப்பு',
+                                                                        'மாநிறம்' => 'மாநிறம்',
+                                                                        ])}}</div>
             </div>
             <div class="form-group row">
                 <div class="col-12 col-md-2">{{Form::label('loc1', 'வசிக்கும் இடம்')}}</div>
